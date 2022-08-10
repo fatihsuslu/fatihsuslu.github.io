@@ -313,17 +313,17 @@
 
   </div>
   <div class="form-container">
-    <form action="https://formsubmit.co/fatih_suslu42@hotmail.com" method="POST">
+    <form action="https://formsubmit.co/tuketimhesaplama@gmail.com" method="POST">
       <h3>BİZDEN FİYAT BİLGİSİ ALIN</h3>
       <h5>Hesaplama sonucunda oluşan tüketim miktarınıza göre size bir fiyat bilgisi sunalım</h5>
       <input type="text" name="ad" placeholder="Tam Adınız" required>
       <input type="email" name="eposta" placeholder="Eposta Adresiniz" required>
       <input type="text" name="tel" placeholder="Telefon Numaranız" required>
       <textarea name="mesaj" rows="4" placeholder="Aklınızda Herhangi Bir Soru Var Mı?"></textarea>
-      <textarea class="sendDatas" name="mesaj2" rows="4" id="sendData"></textarea>
-      <textarea class="sendDatas" name="mesaj3" rows="4" id="sendData2"></textarea>
-      <textarea class="sendDatas" name="mesaj4" rows="4" id="sendData3"></textarea>
-      <input type="hidden" name="_next" value="https://fatihsuslu.github.io">
+      <textarea class="sendDatas" name="cihazlar" rows="4" id="sendData"></textarea>
+      <textarea class="sendDatas" name="Günlük tüketim:" rows="4" id="sendData2"></textarea>
+      <textarea class="sendDatas" name="Ayklık tüketim" rows="4" id="sendData3"></textarea>
+      <input type="hidden" name="_next" value="file:///C:/Users/fatih/Desktop/Tuketim-Hesaplama/form.html">
       <button type="submit">Gönder</button>
     </form>
 
@@ -331,7 +331,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
-  <script src="https://smtpjs.com/v3/smtp.js"></script>
   <script>
 
     var shopcart = [];
@@ -516,8 +515,6 @@
 
           document.getElementById("sendData2").innerHTML = tgtotal;
           document.getElementById("sendData3").innerHTML = total;
-          console.log("sendData2 çalıştı");
-          console.log("sendData3 çalıştı");
       }
 
       function formatMoney(n) {
@@ -529,8 +526,7 @@
             let sendData = {}
             Object.keys(localStorage).forEach((key) => {
               sendData[key] = localStorage.getItem(key);
-              document.getElementById("sendData").innerHTML = Object.values(sessionStorage);
-              console.log("sendData çalıştı");
+              document.getElementById("sendData").innerHTML =JSON.stringify(Object.values(sessionStorage)) ;
               outputCart();
             });
           }
