@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Tüketim Hesaplama</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous" />
+  <style>
+    body {
+      background: #CBF1F5;
+    }
+
+    .container {
+      background: white;
+      margin-top: 2%;
+      padding: 0;
+    }
+
+    .item {
+      border: 1px solid black;
+      padding: 20px:inherit;
+      width: 228px;
+      float: left;
+      height: 200px;
+      text-align: center;
+      padding: var(--base-padding);
+      position: relative;
+
+
+    }
+
+
+    #output {
+      clear: both;
+      border: 1px solid black;
+      padding: 30px;
+      font-family: sans-serif;
+      font-weight: 600;
+    }
+
+    .form-container {
+      width: 100%;
+      height: 70vh;
+      background: #CBF1F51;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    form {
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      padding: 1vW 4vW;
+      width: 90%;
+      max-width: 1150px;
+      border-radius: 10px;
+    }
+
+    form h3 {
+      text-align: center;
+      color #555;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    form h5 {
+      text-align: center;
+      font-weight: 500;
+      color: #35858B;
+    }
+
+    form input,
+    form textarea {
+      border: 0;
+      margin: 10px 0;
+      padding: 20px;
+      outline: none;
+      background: #f5f5f5;
+      font-size: 16px;
+    }
+
+    form button {
+      padding: 15px;
+      background: #3CCF4E;
+      color: #fff;
+      font-size: 25px;
+      border: 0;
+      outline: none;
+      cursor: pointer;
+      width: 150px;
+      margin: 20px auto 0;
+      border-radius: 30px;
+    }
+
+    .toplamsonuc {
+      font-family: Verdana, sans-serif;
+      font-size: 20px;
+      color: #231955;
+    }
+
+    .baslik {
+      text-align: center;
+    }
+
+    .button {
+      position: absolute;
+      bottom: 10px;
+      right: 80px;
+    }
+
+    .logo {
+      text-align: center;
+    }
+
+    .image {
+      position: absolute;
+      bottom: 55px;
+      right: 66px;
+    }
+
+    .item h3 {
+      margin-top: 10px;
+    }
+
+    .sendDatas{
+      display: none;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="logo">
+    <p><a href="https://argemateknoloji.com/">
+        <img src="images/argema.png" alt="argema-logo">
+      </a></p>
+  </div>
+  <div class="baslik">
+    <br>
+    <h2 style="color:green;">Nasıl kullanılır?
+      <p style="color:black;">Tükettiğiniz enerjiyi öğrenmek için lütfen aşağıdaki cihazlardan kullanmakta olduklarınızı seçiniz.<br>
+        Cihazınızın özeliklerini ve kullanım sürelerini, ilgili kutucuklardan değiştirebilirsiniz.<br> Değişiklikten sonra yeni sonuçlar otomatik olarak hesaplanacaktır. </p>
+
+  </div>
+  <div class="container">
+    <div class="items">
+
+      <div class="item">
+        <h3>Buzdolabı</h3>
+        <img class="image" src="images/ikon-1.png" class="img-fluid" />
+        <div class="button">
+          <a href="#" class="productItem btn btn-success" data-image="images/ikon-1.png" data-name="Buzdolabı" data-tuketim="100" data-cs="24" data-hk="7" data-id="1">Ekle</a>
+        </div>
+      </div>
+      <div class="item">
+        <h3>Klima</h3>
+        <img class="image" src="images/ikon-2.png" class="img-fluid" />
+        <div class="button">
+          <a href="#" class="productItem btn btn-success" data-image="images/ikon-2.png" data-name="Klima" data-tuketim="1200" data-cs="8" data-hk="7" data-id="2">Ekle</a>
+        </div>
+      </div>
+      <div class="item">
+        <h3>Elektrikli süpürge</h3>
+        <img class="image" src="images/ikon-3.png" class="img-fluid" />
+        <div class="button">
+          <a href="#" class="productItem btn btn-success" data-image="images/ikon-3.png" data-name="Elektrikli süpürge" data-tuketim="1000" data-cs="0.5" data-hk="2" data-id="3">Ekle</a>
+        </div>
+      </div>
+      <div class="item">
+        <h3>TV-LCD</h3>
+        <img class="image" src="images/ikon-4.png" class="img-fluid" />
+        <div class="button">
+          <a href="#" class="productItem btn btn-success" data-image="images/ikon-4.png" data-name="TV-LCD" data-tuketim="100" data-cs="5" data-hk="7" data-id="4">Ekle</a>
+        </div>
+      </div>
+      <div class="item">
+        <h3>Dizüstü Bilgisayar</h3>
+        <img class="image" src="images/ikon-5.png" class="img-fluid" />
+        <div class="button">
+          <a href="#" class="productItem btn btn-success" data-image="images/ikon-5.png" data-name="Dizüstü Bilgisayar" data-tuketim="75" data-cs="4" data-hk="7" data-id="5">Ekle</a>
+        </div>
+      </div>
+      <div class="item">
+        <h3>Çamaşır Makinesi</h3>
+        <img class="image" src="images/ikon-6.png" class="img-fluid" />
+        <div class="button">
+          <a href="#" class="productItem btn btn-success" data-image="images/ikon-6.png" data-name="Çamaşır Makinesi" data-tuketim="2000" data-cs="2" data-hk="4" data-id="6">Ekle</a>
+        </div>
+      </div>
+      <div class="item">
+        <h3>Çamaşır Kurutucu</h3>
+        <img class="image" src="images/ikon-7.png" class="img-fluid" />
+        <div class="button">
+          <a href="#" class="productItem btn btn-success" data-image="images/ikon-7.png" data-name="Çamaşır Kurutucu" data-tuketim="2750" data-cs="3" data-hk="2" data-id="7">Ekle</a>
+        </div>
+      </div>
+      <div class="item">
+        <h3>Ütü</h3>
+        <img class="image" src="images/ikon-8.png" class="img-fluid" />
+        <div class="button">
+          <a href="#" class="productItem btn btn-success" data-image="images/ikon-8.png" data-name="Ütü" data-tuketim="2000" data-cs="2" data-hk="2" data-id="8">Ekle</a>
+        </div>
+      </div>
+      <div class="item">
+        <h3>Traş Makinesi</h3>
+        <img class="image" src="images/ikon-9.png" class="img-fluid" />
+        <div class="button">
+          <a href="#" class="productItem btn btn-success" data-image="images/ikon-9.png" data-name="Traş Makinesi" data-tuketim="10" data-cs="0.1" data-hk="5" data-id="9">Ekle</a>
+        </div>
+      </div>
+      <div class="item">
+        <h3>Saç Kurutucu</h3>
+        <img class="image" src="images/ikon-10.png" class="img-fluid" />
+        <div class="button">
+          <a href="#" class="productItem btn btn-success" data-image="images/ikon-10.png" data-name="Saç Kurutucu" data-tuketim="2000" data-cs="0.2" data-hk="2" data-id="10">Ekle</a>
+        </div>
+      </div>
+      <div class="item">
+        <h3>Klasik Ampul </h3>
+        <img class="image" src="images/ikon-11.png" class="img-fluid" />
+        <div class="button">
+          <a href="#" class="productItem btn btn-success" data-image="images/ikon-11.png" data-name="Klasik Ampul " data-tuketim="80" data-cs="5" data-hk="7" data-id="11">Ekle</a>
+        </div>
+      </div>
+      <div class="item">
+        <h3>Lamba Ekonomik </h3>
+        <img class="image" src="images/ikon-12.png" class="img-fluid" />
+        <div class="button">
+          <a href="#" class="productItem btn btn-success" data-image="images/ikon-12.png" data-name="Lamba Ekonomik " data-tuketim="20" data-cs="5" data-hk="7" data-id="12">Ekle</a>
+        </div>
+      </div>
+      <div class="item">
+        <h3>Su Kaynatıcı</h3>
+        <img class="image" src="images/ikon-13.png" class="img-fluid" />
+        <div class="button">
+          <a href="#" class="productItem btn btn-success" data-image="images/ikon-13.png" data-name="Su Kaynatıcı" data-tuketim="2200" data-cs="0.1" data-hk="7" data-id="13">Ekle</a>
+        </div>
+      </div>
+      <div class="item">
+        <h3>Elektrikli Fırın</h3>
+        <img class="image" src="images/ikon-14.png" class="img-fluid" />
+        <div class="button">
+          <a href="#" class="productItem btn btn-success" data-image="images/ikon-14.png" data-name="Elektrikli Fırın" data-tuketim="2500" data-cs="1.5" data-hk="1" data-id="14">Ekle</a>
+        </div>
+      </div>
+      <div class="item">
+        <h3>Mikro Dalga Fırın</h3>
+        <img class="image" src="images/ikon-15.png" class="img-fluid" />
+        <div class="button">
+          <a href="#" class="productItem btn btn-success" data-image="images/ikon-15.png" data-name="Mikro Dalga Fırın" data-tuketim="1500" data-cs="1" data-hk="1" data-id="15">Ekle</a>
+        </div>
+      </div>
+      <div class="item">
+        <h3>Tost Makinesi</h3>
+        <img class="image" src="images/ikon-16.png" class="img-fluid" />
+        <div class="button">
+          <a href="#" class="productItem btn btn-success" data-image="images/ikon-16.png" data-name="Tost Makinesi" data-tuketim="1000" data-cs="0.6" data-hk="2" data-id="16">Ekle</a>
+        </div>
+      </div>
+      <div class="item">
+        <h3>Davlumbaz</h3>
+        <img class="image" src="images/ikon-17.png" class="img-fluid" />
+        <div class="button">
+          <a href="#" class="productItem btn btn-success" data-image="images/ikon-17.png" data-name="Davlumbaz" data-tuketim="150" data-cs="0.66" data-hk="2" data-id="17">Ekle</a>
+        </div>
+      </div>
+      <div class="item">
+        <h3>Bulaşık Makinesi</h3>
+        <img class="image" src="images/ikon-18.png" class="img-fluid" />
+        <div class="button">
+          <a href="#" class="productItem btn btn-success" data-image="images/ikon-18.png" data-name="Bulaşık Makinesi" data-tuketim="1200" data-cs="2.5" data-hk="5" data-id="18">Ekle</a>
+        </div>
+      </div>
+      <div class="item">
+        <h3>Elektrikli Kalorifer</h3>
+        <img class="image" src="images/ikon-19.png" class="img-fluid" />
+        <div class="button">
+          <a href="#" class="productItem btn btn-success" data-image="images/ikon-19.png" data-name="Elektrikli Kalorifer" data-tuketim="2000" data-cs="6" data-hk="7" data-id="19">Ekle</a>
+        </div>
+      </div>
+      <div class="item">
+        <h3>Telefon Şarj Aleti</h3>
+        <img class="image" src="images/ikon-20.png" class="img-fluid" />
+        <div class="button">
+          <a href="#" class="productItem btn btn-success" data-image="images/ikon-20.png" data-name="Telefon Şarj Aleti" data-tuketim="400" data-cs="2" data-hk="7" data-id="20">Ekle</a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="tablo">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Cihaz</th>
+            <th>Adet</th>
+            <th>Tüketim(Watt)</th>
+            <th>Çalışma Süresi(Saat)</th>
+            <th>Haftalık Kullanım(Gün)</th>
+            <th>Günlük Tüketim</th>
+            <th>Aylık Tüketim</th>
+            <th>Kaldır</th>
+          </tr>
+        </thead>
+        <tbody id="output">
+          <td></td>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+  <div class="form-container">
+    <form action="https://formsubmit.co/tuketimhesaplama@gmail.com" method="POST">
+      <h3>BİZDEN FİYAT BİLGİSİ ALIN</h3>
+      <h5>Hesaplama sonucunda oluşan tüketim miktarınıza göre size bir fiyat bilgisi sunalım</h5>
+      <input type="text" name="ad" placeholder="Tam Adınız" required>
+      <input type="email" name="eposta" placeholder="Eposta Adresiniz" required>
+      <input type="text" name="tel" placeholder="Telefon Numaranız" required>
+      <textarea name="mesaj" rows="4" placeholder="Aklınızda Herhangi Bir Soru Var Mı?"></textarea>
+      <textarea class="sendDatas" name="mesaj2" rows="4" id="sendData"></textarea>
+      <textarea class="sendDatas" name="mesaj3" rows="4" id="sendData2"></textarea>
+      <textarea class="sendDatas" name="mesaj4" rows="4" id="sendData3"></textarea>
+      <input type="hidden" name="_next" value="file:///C:/Users/fatih/Desktop/Tuketim-Hesaplama/form.html">
+      <button type="submit">Gönder</button>
+    </form>
+
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script>
+
+    var shopcart = [];
+    $(document).ready(function() {
+      outputCart();
+      dataYukle()
+
+      $('#output').on('click', '.temizle', function() {
+        var shopcart = [];
+        sessionStorage["sca"] = JSON.stringify(shopcart);
+        outputCart();
+      })
+
+      $('#output').on('click', '.remove-item', function() {
+        var itemInfo = $(this.dataset)[0];
+        var itemToDelete = $('.remove-item').index(this);
+        shopcart.splice(itemToDelete, 1);
+        sessionStorage["sca"] = JSON.stringify(shopcart);
+        outputCart();
+        dataYukle()
+      })
+
+      $('#output').on('change', '.dynqua', function() {
+        var iteminfo = $(this.dataset)[0];
+        var itemincart = false;
+        var adet = $(this).val();
+        if (adet < 0) {
+          adet = 0;
+          $(this).val(0);
+        }
+        $.each(shopcart, function(index, value) {
+          if (value.id == iteminfo.id) {
+            shopcart[index].adet = adet;
+            itemincart = true;
+          }
+        })
+
+        sessionStorage["sca"] = JSON.stringify(shopcart);
+        outputCart();
+        dataYukle()
+      })
+      $('#output').on('change', '.dyntuketim', function() {
+        var iteminfo = $(this.dataset)[0];
+        var itemincart = false;
+        var tuketim = $(this).val();
+        if (tuketim < 0) {
+          tuketim = 0;
+          $(this).val(0);
+        }
+        $.each(shopcart, function(index, value) {
+          if (value.id == iteminfo.id) {
+            shopcart[index].tuketim = tuketim;
+            itemincart = true;
+          }
+        })
+
+        sessionStorage["sca"] = JSON.stringify(shopcart);
+        outputCart();
+        dataYukle()
+
+      })
+      $('#output').on('change', '.dyncs', function() {
+        var iteminfo = $(this.dataset)[0];
+        var itemincart = false;
+        var cs = $(this).val();
+        if (cs < 0) {
+          cs = 0;
+          $(this).val();
+        }
+        $.each(shopcart, function(index, value) {
+          if (value.id == iteminfo.id) {
+            shopcart[index].cs = cs;
+            itemincart = true;
+          }
+        })
+
+        sessionStorage["sca"] = JSON.stringify(shopcart);
+        outputCart();
+        dataYukle()
+
+      })
+      $('#output').on('change', '.dynhk', function() {
+        var iteminfo = $(this.dataset)[0];
+        var itemincart = false;
+        var hk = $(this).val();
+        if (hk < 0) {
+          hk = 0;
+          $(this).val();
+        }
+        $.each(shopcart, function(index, value) {
+          if (value.id == iteminfo.id) {
+            shopcart[index].hk = hk;
+            itemincart = true;
+          }
+        })
+
+        sessionStorage["sca"] = JSON.stringify(shopcart);
+        outputCart();
+        dataYukle()
+      })
+
+      $(".productItem").click(function(e) {
+        e.preventDefault();
+        var iteminfo = $(this.dataset)[0];
+        iteminfo.adet = 1;
+        var itemincart = false;
+        $.each(shopcart, function(index, value) {
+          if (value.id == iteminfo.id) {
+            value.adet = parseInt(value.adet) + parseInt(iteminfo.adet);
+            itemincart = true;
+          }
+        });
+        if (!itemincart) {
+          shopcart.push(iteminfo);
+        }
+        sessionStorage["sca"] = JSON.stringify(shopcart);
+        outputCart();
+        dataYukle()
+        ///
+      });
+
+      function outputCart() {
+        if (sessionStorage["sca"] != null) {
+          shopcart = JSON.parse(sessionStorage["sca"].toString());
+        }
+        var holderHTML = "";
+        var total = 0;
+        var tgtotal = 0;
+        $.each(shopcart, function(index, value) {
+
+          var atotal = (value.adet * value.tuketim * value.cs * value.hk * 4) / 1000;
+          var gtotal = (value.adet * value.tuketim * value.cs) / 1000;
+          var a = index + 1;
+          total += atotal;
+          tgtotal += gtotal;
+
+          holderHTML +=
+            "<tr><td>" +
+            '<img width="50" height="50"src="' + value.image + '" />' + ' ' +
+            value.name +
+            "</td><td>" +
+            '<input min="1" type="number" class="dynqua" style="width: 3em" name="" value="' +
+            value.adet + '"data-id="' + value.id +
+            '"> ' +
+            "</td><td>" +
+            '<input min="1" class="dyntuketim"style="width: 5em" type="number" name="" value="' +
+            value.tuketim + '"data-id="' + value.id +
+            '"> ' +
+            "</td><td>" +
+            '<input min="1" class="dyncs"max="24" type="number" name="" value="' +
+            value.cs + '"data-id="' + value.id +
+            '"> ' +
+            "</td><td>" +
+            '<input min="1" class="dynhk" type="number" max="24" name="" value="' +
+            value.hk + '"data-id="' + value.id +
+            '"> ' +
+            '</td><td>' +
+            formatMoney(gtotal) +
+            "</td></td>" +
+            '</td><td>' +
+            formatMoney(atotal) +
+            '</td><td>' +
+            '<span class="remove-item btn btn-danger">X</span>' +
+            '</td></tr>';
+
+
+
+
+        });
+        holderHTML +=
+          '<tr><td colspan="3" style="color: green;" class="toplamsonuc" > Toplam Günlük Tüketim: ' +
+          formatMoney(tgtotal) +
+          '<tr><td colspan="3" style="color: green;" class="toplamsonuc">  Toplam Aylık Tüketim: ' +
+          formatMoney(total) +
+          '<tr ><td colspan="3">' +
+          '<button  class="temizle btn btn-danger" type="submit">Tabloyu Temizle</button>'
+        '</td></tr>>';
+        $("#output").html(holderHTML);
+        $("total").html(formatMoney(total));
+        $("gttotal").html(formatMoney(total));
+
+
+          document.getElementById("sendData2").innerHTML = tgtotal;
+          document.getElementById("sendData3").innerHTML = total;
+          console.log("sendData2 çalıştı");
+          console.log("sendData3 çalıştı");
+      }
+
+      function formatMoney(n) {
+        return (n).toFixed(2) + " kWh";
+      }
+
+
+      function dataYukle(){
+            let sendData = {}
+            Object.keys(localStorage).forEach((key) => {
+              sendData[key] = localStorage.getItem(key);
+              document.getElementById("sendData").innerHTML = Object.values(sessionStorage);
+              console.log("sendData çalıştı");
+              outputCart();
+            });
+          }
+
+    });
+  </script>
+</body>
+
+</html>
