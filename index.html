@@ -129,6 +129,56 @@
       display: none;
     }
 
+    .table{
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.table th{
+	background-color: #0096FF;
+	color:#ffffff;
+}
+
+    @media(max-width: 500px){
+.form-container{
+  padding-top: 200px;
+}
+
+.item{
+  margin-left: 20%;
+}
+
+
+
+  .table thead{
+		display: none;
+	}
+
+	.table, .table tbody, .table tr, .table td{
+		display: block;
+		width: 100%;
+	}
+	.table tr{
+		margin-bottom:15px;
+	}
+	.table td{
+		text-align: right;
+		padding-left: 50%;
+		text-align: right;
+		position: relative;
+	}
+	.table td::before{
+		content: attr(data-label);
+		position: absolute;
+		left:0;
+		width: 50%;
+		padding-left:15px;
+		font-size:15px;
+		font-weight: bold;
+		text-align: left;
+	}
+}
+
   </style>
 </head>
 
@@ -291,8 +341,8 @@
     </div>
 
 
-    <div class="tablo">
-      <table class="table">
+    <div  class="tablo">
+      <table  class="table">
         <thead>
           <tr>
             <th>Cihaz</th>
@@ -473,19 +523,19 @@
             '<img width="50" height="50"src="' + value.image + '" />' + ' ' +
             value.name +
             "</td><td>" +
-            '<input min="1" type="number" class="dynqua" style="width: 3em" name="" value="' +
+            '<input min="1" placeholder="adet" type="number" class="dynqua" style="width: 3em" name="" value="' +
             value.adet + '"data-id="' + value.id +
             '"> ' +
             "</td><td>" +
-            '<input min="1" class="dyntuketim"style="width: 5em" type="number" name="" value="' +
+            '<input min="1" placeholder="tüketimW" class="dyntuketim"style="width: 5em" type="number" name="" value="' +
             value.tuketim + '"data-id="' + value.id +
             '"> ' +
             "</td><td>" +
-            '<input min="1" class="dyncs"max="24" type="number" name="" value="' +
+            '<input min="1" placeholder="saat" class="dyncs"max="24" type="number" name="" value="' +
             value.cs + '"data-id="' + value.id +
             '"> ' +
             "</td><td>" +
-            '<input min="1" class="dynhk" type="number" max="24" name="" value="' +
+            '<input min="1" placeholder="gün" class="dynhk" type="number" max="24" name="" value="' +
             value.hk + '"data-id="' + value.id +
             '"> ' +
             '</td><td>' +
