@@ -125,9 +125,9 @@
       margin-top: 10px;
     }
 
-    /* .sendDatas{
+    .sendDatas{
       display: none;
-    } */
+    }
 
   </style>
 </head>
@@ -525,8 +525,8 @@
       function dataYukle(){
             let sendData = {}
             var veri=0;
-            Object.keys(localStorage).forEach((key) => {
-              sendData[key] = localStorage.getItem(key);
+            Object.keys(sessionStorage).forEach((key) => {
+              sendData[key] = sessionStorage.getItem(key);
               veri=JSON.stringify(Object.values(sessionStorage))
               document.getElementById("sendData").innerHTML =veri ;
               outputCart();
