@@ -178,6 +178,15 @@
 		text-align: left;
 	}
 
+
+}
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
 }
 
   </style>
@@ -364,16 +373,16 @@
 
   </div>
   <div class="form-container">
-    <form action="https://formsubmit.co/613e76f418147088ef06040e995098d0" method="POST">
+    <form action="https://formsubmit.co/fatih_suslu42@hotmail.com" method="POST">
       <h3>BİZDEN FİYAT BİLGİSİ ALIN</h3>
       <h5>Hesaplama sonucunda oluşan tüketim miktarınıza göre size bir fiyat bilgisi sunalım</h5>
       <input type="text" name="ad" placeholder="Tam Adınız" required>
-      <input type="email" name="eposta" placeholder="Eposta Adresiniz">
+      <input type="email" name="eposta" placeholder="Eposta Adresiniz" required>
       <input type="text" name="tel" placeholder="Telefon Numaranız" required>
       <textarea name="mesaj" rows="4" placeholder="Aklınızda Herhangi Bir Soru Var Mı?"></textarea>
       <textarea class="sendDatas" name="cihazlar" rows="40" id="sendData"></textarea>
-      <textarea class="sendDatas" name="Günlük tüketim kWh:" rows="4" id="sendData2"></textarea>
-      <textarea class="sendDatas" name="Ayklık tüketim kWh" rows="4" id="sendData3"></textarea>
+      <textarea class="sendDatas" name="Günlük tüketim:" rows="4" id="sendData2"></textarea>
+      <textarea class="sendDatas" name="Ayklık tüketim" rows="4" id="sendData3"></textarea>
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_next" value="https://fatihsuslu.github.io/form">
       <button type="submit">Gönder</button>
